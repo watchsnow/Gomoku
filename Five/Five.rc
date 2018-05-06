@@ -1,0 +1,381 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Five.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Five.ico"
+IDI_ICON_VS             ICON    DISCARDABLE     "res\\VS.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FIVE_DIALOG DIALOGEX 0, 0, 436, 319
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "五子棋 v1.00"
+MENU IDR_MENU
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "和棋",IDC_BTN_HQ,271,298,50,14
+    PUSHBUTTON      "悔棋",IDC_BTN_BACK,325,298,50,14
+    PUSHBUTTON      "认输",IDC_BTN_LOST,379,298,50,14
+    CTEXT           "Static",IDC_ST_ENEMY,364,7,65,8
+    CTEXT           "Static",IDC_ST_ME,271,7,65,8
+    EDITTEXT        IDC_EDT_CHAT,271,27,158,242,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL
+    LTEXT           "聊天",IDC_STATIC,271,281,17,8
+    COMBOBOX        IDC_CMB_CHAT,291,278,138,59,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    ICON            IDI_ICON_VS,IDC_STATIC,339,2,20,20
+END
+
+IDD_DLG_SERVER DIALOG DISCARDABLE  0, 0, 229, 93
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "建立游戏"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "以下是您的主机名和IP地址，网络上的其他玩家可以通过它们来和您进行游戏。如果您是在局域网之中，推荐使用主机名；如果您是在因特网中，请您使用IP地址。",
+                    IDC_STATIC,7,7,215,26
+    LTEXT           "主机名：",IDC_STATIC,7,38,33,8
+    EDITTEXT        IDC_EDIT_HOST,41,36,70,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "IP地址：",IDC_STATIC,118,37,33,8
+    EDITTEXT        IDC_EDIT_IP,152,35,70,14,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "",IDC_STATIC,7,55,215,5
+    DEFPUSHBUTTON   "建立游戏",IDC_BTN_LISTEN,117,72,50,14
+    PUSHBUTTON      "取消",IDC_BTN_LEAVE,172,72,50,14
+    LTEXT           "状态：连接未建立。",IDC_ST_STATUS,7,74,105,8
+END
+
+IDD_DLG_CLIENT DIALOG DISCARDABLE  0, 0, 229, 91
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "加入游戏"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "如果网络上有其他的玩家建立了游戏，您可以通过他的主机名或IP地址来和他进行游戏。如果您是在局域网之中，推荐使用主机名；如果您是在因特网中，请您使用IP地址。",
+                    IDC_STATIC,7,7,215,27
+    LTEXT           "主机名/IP地址：",IDC_STATIC,7,40,61,8
+    EDITTEXT        IDC_EDIT_HOST,69,37,153,14,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,7,55,215,5
+    DEFPUSHBUTTON   "连接",IDC_BTN_CONNECT,117,70,50,14,WS_DISABLED
+    PUSHBUTTON      "取消",IDC_BTN_OUT,172,70,50,14
+    LTEXT           "正在连接...(5)",IDC_ST_TIMER,7,72,57,8
+END
+
+IDD_DLG_NAME DIALOG DISCARDABLE  0, 0, 187, 55
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "更改玩家姓名"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,39,34,50,14
+    PUSHBUTTON      "取消",IDCANCEL,97,34,50,14
+    LTEXT           "玩家姓名：",IDC_STATIC,7,10,41,8
+    EDITTEXT        IDC_EDIT_NAME,50,7,130,14,ES_AUTOHSCROLL
+END
+
+IDD_DLG_STAT DIALOG DISCARDABLE  0, 0, 187, 111
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "战绩统计"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,39,90,50,14
+    LTEXT           "玩家姓名：",IDC_STATIC,55,7,41,8
+    LTEXT           "获胜次数：",IDC_STATIC,55,21,41,8
+    LTEXT           "和棋次数：",IDC_STATIC,55,35,41,8
+    LTEXT           "失败次数：",IDC_STATIC,55,49,41,8
+    LTEXT           "Static",IDC_ST_NAME,97,7,79,8
+    LTEXT           "Static",IDC_ST_WIN,97,21,27,8
+    LTEXT           "Static",IDC_ST_DRAW,97,35,25,8
+    LTEXT           "Static",IDC_ST_LOST,97,49,25,8
+    GROUPBOX        "",IDC_STATIC,7,61,173,5
+    CTEXT           "Static",IDC_ST_PERCENT,7,74,173,8
+    PUSHBUTTON      "重新计分",IDC_BTN_RESET,97,90,50,14
+END
+
+IDD_DLG_ABOUT DIALOG DISCARDABLE  0, 0, 187, 67
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "关于五子棋"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,68,46,50,14
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,7,20,20
+    LTEXT           "五子棋 v1.00",IDC_STATIC,69,7,49,8
+    LTEXT           "01090B1 李子明 13号\n01090B1 李璇 2号",IDC_STATIC,56,24,
+                    76,16
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Titi Studio\0"
+            VALUE "FileDescription", "五子棋\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Five\0"
+            VALUE "LegalCopyright", "版权没有 (?) titilima 2005\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Five.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "五子棋\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_FIVE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 429
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 312
+    END
+
+    IDD_DLG_SERVER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    IDD_DLG_CLIENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 84
+    END
+
+    IDD_DLG_NAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DLG_STAT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 104
+    END
+
+    IDD_DLG_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BMP_QP              BITMAP  DISCARDABLE     "res\\Table.bmp"
+IDB_BMP_BLACK           BITMAP  DISCARDABLE     "res\\Black.bmp"
+IDB_BMP_WHITE           BITMAP  DISCARDABLE     "res\\White.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "游戏(&G)"
+    BEGIN
+        POPUP "单人游戏(&S)"
+        BEGIN
+            MENUITEM "玩家先走(&P)",                ID_MENU_1P
+            MENUITEM "电脑先走(&C)",                ID_MENU_PC
+        END
+        POPUP "网络对战(&N)"
+        BEGIN
+            MENUITEM "建立游戏（先手）(&C)...",     ID_MENU_SERVER
+            MENUITEM "加入游戏（后手）(&J)...",     ID_MENU_CLIENT
+            MENUITEM SEPARATOR
+            MENUITEM "再战一局(&R)",                ID_MENU_PLAYAGAIN
+            MENUITEM "离开游戏(&L)",                ID_MENU_LEAVE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_MENU_EXIT
+    END
+    POPUP "选项(&O)"
+    BEGIN
+        MENUITEM "更改玩家姓名(&R)...",         ID_MENU_NAME
+        MENUITEM "战绩统计(&S)...",             ID_MENU_STAT
+        MENUITEM SEPARATOR
+        MENUITEM "关于(&A)...",                 ID_MENU_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FIVE_DIALOG DLGINIT
+BEGIN
+    IDC_CMB_CHAT, 0x403, 19, 0
+0xe3c4, 0xc4b5, 0xe5c6, 0xc2cf, 0xc3b5, 0xabcc, 0xc3ba, 0xcbc1, 0xa1a3, 
+"\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_WAVE_PUT            WAVE    DISCARDABLE     "res\\put.wav"
+IDR_WAVE_LOST           WAVE    DISCARDABLE     "res\\lost.wav"
+IDR_WAVE_WIN            WAVE    DISCARDABLE     "res\\win.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_SOCKETS_INIT_FAILED "Windows 通信端口初始化失败。"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\Five.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
